@@ -105,7 +105,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Send Data
     function sendFormData(name, phone, message) {
-      const url = `https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`;
+      const token = "345345";
+      const chatId = "345";
+      const url = `https://api.telegram.org/bot${token}/sendMessage`;
 
       let text = "<b>Заявка</b>\n";
       text += `<b>Ім'я:</b> ${name}\n`;
@@ -113,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
       text += `<b>Повідомлення:</b> ${message}\n`;
 
       const data = {
-        chat_id: TELEGRAM_CHAT_ID,
+        chat_id: chatId,
         text: text,
         parse_mode: "HTML",
       };
